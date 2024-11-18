@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-icon name="arrow-back-outline" (click)="onBack()"></ion-icon>
+      <ion-label>
+
+      </ion-label>
+    </ion-item>
+
+    <ion-buttons slot="end">
+      <ion-button>
+
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isLoading" class="loader">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <ion-list class="shopping-list">
+    <ion-item *ngFor="let item of shoppingList">
+      <ion-icon name="cart-outline" slot="start" color="primary"></ion-icon>
+      <ul class="list-none pl-0 text-left">
+        <li *ngFor="let list of item.shopping_list" class="pl-2 pr-2">{{ list }}</li>
+      </ul>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="presentDeleteConfirmation()">
+      <ion-icon name="trash"></ion-icon> <!-- Icono de basurero para eliminar -->
+      <ion-label>Eliminar lista</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+

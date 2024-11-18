@@ -1,0 +1,13 @@
+{
+  "name": "verdo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/google-auth",
+      "proxyUrl": "https://oauth2.googleapis.com"
+    }
+  ]
+}

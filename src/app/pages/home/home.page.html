@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="left-align">Bienvenid@</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="searchbar">
+    <div class="icon">
+      <ion-input placeholder="Buscar" class="search-input"></ion-input>
+      <ion-icon slot="end" name="search" color="medium"></ion-icon>
+    </div>
+  </div>
+
+  <div class="flex">
+    <ion-label class="bold_text">Menus</ion-label>
+  </div>
+
+  <div class="card-container">
+    <ion-button 
+      class="btn" 
+      *ngFor="let type of menuTypes" 
+      (click)="getMenuType(type)">
+      {{ type }}
+    </ion-button>
+  </div>
+  
+
+  <!-- Mostrar el loader mientras isLoading es true -->
+  <div *ngIf="isLoading" class="loader">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <div class="grocery-container">
+    <div class="grocery" *ngFor="let item of menus" (click)="onDetail(item.id)">
+      <img [src]="item.image" [alt]="item.title" class="grocery-image">
+      <div class="text-container">
+        <ion-label class="bold_text">{{ item.title }}</ion-label>
+        <ion-label class="grey_text">{{ item.description }}</ion-label>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
