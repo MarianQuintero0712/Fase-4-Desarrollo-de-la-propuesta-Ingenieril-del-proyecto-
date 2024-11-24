@@ -1,0 +1,238 @@
+
+ion-header {
+  --background: var(--ion-color-primary);
+
+  ion-toolbar {
+    --background: var(--ion-color-primary);
+
+    ion-item {
+      --background: transparent;
+
+      ion-icon {
+        font-size: 20px;
+        color: #eaeaf4;
+      }
+
+      .back_image {
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        margin-left: 10px;
+      }
+
+      ion-label {
+        margin-left: 1rem;
+        color: #eaeaf4;
+
+        h2 {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+ion-content {
+
+  .messageList {
+    .left {
+      width: 100%;
+      float: left;
+      margin-left: 15px;
+
+      p {
+        width: max-content;
+        float: left;
+        background: rgb(237, 235, 235);
+        border-radius: 0 10px 10px 10px;
+        padding: 5px 10px;
+      }
+    }
+
+    .right {
+      width: 100%;
+      float: right;
+      margin-right: 15px;
+
+      p {
+        width: max-content;
+        float: right;
+        background: var(--ion-color-primary);
+        color: white;
+        border-radius: 10px 0px 10px 10px;
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+
+ion-footer {
+  ion-toolbar {
+    --border-width: 0px;
+    padding: 10px;
+    align-items: center;
+
+    ion-row {
+      display: flex;
+      flex-direction: row;
+
+      ion-col {
+        ion-input {
+          --padding-start: 20px;
+          background: #F4F5F8;
+          border-radius: 30px;
+          border: 1px solid rgb(220, 219, 219);
+        }
+
+        ion-buttons {
+          background: #fe734d50;
+          border-radius: 50%;
+        }
+
+        .btn {
+          background: var(--ion-color-primary);
+          color: white;
+          border-radius: 50%;
+          height: 100%;
+          width: 90%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.centered-image {
+  display: block;
+  margin: 0 auto;
+  width: 80%; /* Ajusta el tamaño de la imagen */
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.content {
+  text-align: center; /* Centra el contenido */
+  margin-top: 20px;
+}
+
+ion-button {
+  margin: 0 10px;
+}
+
+.btn{
+  width: 20dvh;
+}
+
+/* LOADER */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  text-align: center;
+}
+
+/* AVATAR */
+.profile-icon {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+/* LISTA DE COMPRAS */
+/* Título de la lista de compras */
+.shopping-list-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e67e22; /* Color cálido que combina con el estilo de la comida */
+  text-align: center;
+  margin-bottom: 20px; /* Espacio debajo del título */
+  font-family: 'Arial', sans-serif; /* Fuente legible */
+  text-transform: uppercase; /* Texto en mayúsculas para mayor impacto */
+
+}
+
+.shopping-list-container {
+  background-color: #fff3e6; /* Fondo suave de color pastel */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.shopping-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shopping-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  margin: 12px 0;
+  padding: 14px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.shopping-item:hover {
+  transform: scale(1.03);
+  background-color: #ffe4c4; /* Cambio a color beige claro */
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.shopping-icon {
+  color: #f39c12; /* Color amarillo cálido para el icono de comida */
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.item-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #2c3e50;
+  font-family: 'Arial', sans-serif;
+}
+
+.check-icon {
+  color: #2ecc71; /* Verde brillante para indicar item completado */
+  font-size: 24px;
+}
+
+.shopping-item.completed {
+  background-color: #d4edda;
+  border-left: 5px solid #28a745;
+}
+
+.shopping-item.completed .item-text {
+  text-decoration: line-through;
+  color: #28a745;
+}
+
+.shopping-item.completed .shopping-icon {
+  color: #28a745;
+}
+
+.shopping-item + .shopping-item {
+  margin-top: 10px;
+}

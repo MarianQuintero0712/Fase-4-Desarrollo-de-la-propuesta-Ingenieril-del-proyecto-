@@ -1,0 +1,57 @@
+<ion-content class="ion-padding">
+  <div class="ion-padding space">
+    <!-- Agregamos #loginForm para manejar el formulario -->
+    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" novalidate>
+      <ion-label class="simp_lbl">Acceda a su cuenta</ion-label>
+
+      <!-- Campo Email -->
+      <ion-label class="label">Correo electrónico<span>*</span></ion-label>
+      <ion-item lines="none" [class.invalid]="loginForm.submitted && email.invalid">
+        <ion-input 
+          [(ngModel)]="loginData.email" 
+          name="email" 
+          type="email" 
+          required
+          #email="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="email.invalid && email.touched">
+        <small *ngIf="email.errors?.['required']">El correo es obligatorio.</small>
+        <small *ngIf="email.errors?.['email']">Ingrese un correo válido.</small>
+      </ion-text>
+
+      <!-- Campo Contraseña -->
+      <ion-label class="label">Contraseña<span>*</span></ion-label>
+      <ion-item lines="none" [class.invalid]="loginForm.submitted && password.invalid">
+        <ion-input 
+          [(ngModel)]="loginData.password" 
+          name="password" 
+          type="password" 
+          required
+          minlength="8"
+          #password="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="password.invalid && password.touched">
+        <small *ngIf="password.errors?.['required']">La contraseña es obligatoria.</small>
+        <small *ngIf="password.errors?.['minlength']">Debe tener al menos 8 caracteres.</small>
+      </ion-text>
+
+      <!-- Botón de envío -->
+      <ion-button expand="block" type="submit" [disabled]="loginForm.invalid">
+        Iniciar sesión
+      </ion-button>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="bottom">
+      <ion-label class="last_lbl">¿No tienes cuenta? 
+        <span (click)="onRegister()">Regístrate</span>
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

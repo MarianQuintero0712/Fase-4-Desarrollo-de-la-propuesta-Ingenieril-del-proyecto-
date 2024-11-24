@@ -1,0 +1,90 @@
+<ion-content class="ion-padding">
+  <div class="ion-padding space">
+    <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)" novalidate>
+      <ion-label class="simp_lbl">Crea tu cuenta</ion-label>
+
+      <!-- Campo Nombre -->
+      <ion-label class="label">Nombre<span>*</span></ion-label>
+      <ion-item lines="none" [class.invalid]="registerForm.submitted && name.invalid">
+        <ion-input 
+          [(ngModel)]="registerData.name" 
+          name="name" 
+          type="text" 
+          required
+          minlength="3"
+          #name="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="name.invalid && name.touched">
+        <small *ngIf="name.errors?.['required']">El nombre es obligatorio.</small>
+        <small *ngIf="name.errors?.['minlength']">Debe tener al menos 3 caracteres.</small>
+      </ion-text>
+
+      <!-- Campo Email -->
+      <ion-label class="label">Correo electrónico<span>*</span></ion-label>
+      <ion-item lines="none" [class.invalid]="registerForm.submitted && email.invalid">
+        <ion-input 
+          [(ngModel)]="registerData.email" 
+          name="email" 
+          type="email" 
+          required
+          #email="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="email.invalid && email.touched">
+        <small *ngIf="email.errors?.['required']">El correo es obligatorio.</small>
+        <small *ngIf="email.errors?.['email']">Ingrese un correo válido.</small>
+      </ion-text>
+
+      <!-- Campo Contraseña -->
+      <ion-label class="label">Contraseña<span>*</span></ion-label>
+      <ion-item lines="none" [class.invalid]="registerForm.submitted && password.invalid">
+        <ion-input 
+          [(ngModel)]="registerData.password" 
+          name="password" 
+          type="password" 
+          required
+          minlength="8"
+          #password="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="password.invalid && password.touched">
+        <small *ngIf="password.errors?.['required']">La contraseña es obligatoria.</small>
+        <small *ngIf="password.errors?.['minlength']">Debe tener al menos 8 caracteres.</small>
+      </ion-text>
+
+      <!-- Campo Confirmar Contraseña -->
+      <ion-label class="label">Confirmar contraseña<span>*</span></ion-label>
+      <ion-item lines="none" [class.invalid]="registerForm.submitted && password_confirmation.invalid">
+        <ion-input 
+          [(ngModel)]="registerData.password_confirmation" 
+          name="password_confirmation" 
+          type="password" 
+          required
+          #password_confirmation="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="password_confirmation.invalid && password_confirmation.touched">
+        <small *ngIf="password_confirmation.errors?.['required']">Confirme su contraseña.</small>
+        <small *ngIf="registerData.password !== registerData.password_confirmation && password_confirmation.touched">
+          Las contraseñas no coinciden.
+        </small>
+      </ion-text>
+
+      <!-- Botón de envío -->
+      <ion-button expand="block" type="submit" [disabled]="registerForm.invalid">
+        Registrarse
+      </ion-button>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="bottom">
+      <ion-label class="last_lbl">¿Ya tienes cuenta? 
+        <span (click)="onLogin()">Inicia sesión</span>
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-footer>

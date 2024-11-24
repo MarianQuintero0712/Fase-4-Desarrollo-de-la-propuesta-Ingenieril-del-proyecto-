@@ -1,0 +1,209 @@
+
+ion-header {
+  --background: var(--ion-color-primary);
+
+  ion-toolbar {
+    --background: var(--ion-color-primary);
+
+    ion-item {
+      --background: transparent;
+
+      ion-icon {
+        font-size: 20px;
+        color: #eaeaf4;
+      }
+
+      .back_image {
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        margin-left: 10px;
+      }
+
+      ion-label {
+        margin-left: 1rem;
+        color: #eaeaf4;
+
+        h2 {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+ion-content {
+
+  .messageList {
+    .left {
+      width: 100%;
+      float: left;
+      margin-left: 15px;
+
+      p {
+        width: max-content;
+        float: left;
+        background: rgb(237, 235, 235);
+        border-radius: 0 10px 10px 10px;
+        padding: 5px 10px;
+      }
+    }
+
+    .right {
+      width: 100%;
+      float: right;
+      margin-right: 15px;
+
+      p {
+        width: max-content;
+        float: right;
+        background: var(--ion-color-primary);
+        color: white;
+        border-radius: 10px 0px 10px 10px;
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+
+ion-footer {
+  ion-toolbar {
+    --border-width: 0px;
+    padding: 10px;
+    align-items: center;
+
+    ion-row {
+      display: flex;
+      flex-direction: row;
+
+      ion-col {
+        ion-input {
+          --padding-start: 20px;
+          background: #F4F5F8;
+          border-radius: 30px;
+          border: 1px solid rgb(220, 219, 219);
+        }
+
+        ion-buttons {
+          background: #fe734d50;
+          border-radius: 50%;
+        }
+
+        .btn {
+          background: var(--ion-color-primary);
+          color: white;
+          border-radius: 50%;
+          height: 100%;
+          width: 90%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.centered-image {
+  display: block;
+  margin: 0 auto;
+  width: 80%; /* Ajusta el tamaño de la imagen */
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.content {
+  text-align: center; /* Centra el contenido */
+  margin-top: 20px;
+}
+
+ion-button {
+  margin: 0 10px;
+}
+
+.btn{
+  width: 20dvh;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px;
+}
+
+.icon-right {
+  font-size: 24px; /* Tamaño del ícono */
+}
+
+.card-container {
+  width: 100%; /* Hace que el contenedor ocupe el 100% del ancho disponible */
+  display: flex;
+  flex-direction: column; /* Para que las tarjetas se apilen verticalmente */
+}
+
+.grocery {
+  width: 100%; /* Hace que cada tarjeta ocupe el 100% del ancho */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: space-between; /* Espacio entre el icono y el texto */
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.text-container {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Hace que el contenedor de texto ocupe el 100% de su contenedor */
+}
+
+.cart-icon {
+  margin-right: 10px; /* Espacio entre el icono y el texto */
+  font-size: 24px; /* Tamaño del icono */
+  color: #376E68; /* Puedes cambiar el color del icono */
+}
+
+.bold_text {
+  font-weight: bold;
+}
+
+.grey_text {
+  color: grey;
+}
+
+/* LOADER */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  text-align: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.search-input {
+  flex: 1;
+  height: 20px !important;
+}
+
+.btn{
+  width: 20dvh;
+}
